@@ -1,11 +1,8 @@
 <resources>
     <string name="app_name">AI Transport</string>
-    <string name="navigation_home_title">Home</string>
-    <string name="navigation_car_title">Car</string>
-    <string name="navigation_map_title">Map</string>
-    <string name="google_maps_key">AIzaSyCfN4dTcmwG5oRK977YkZR3kcrP9M9BGV0</string>
-
-
+    <string name="navigation_home_title">Menu</string>
+    <string name="navigation_car_title">Voiture</string>
+    <string name="navigation_map_title">Carte</string>
     <string name="title_activity_car">CarActivity</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_login">Sign in</string>
@@ -21,6 +18,5 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-
 
 </resources>
