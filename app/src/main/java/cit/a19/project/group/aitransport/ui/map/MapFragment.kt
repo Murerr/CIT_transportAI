@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import cit.a19.project.group.aitransport.PermissionManagerImpl
 import cit.a19.project.group.aitransport.R
-import cit.a19.project.group.aitransport.ui.home.HomeFragment
 import cit.a19.project.group.aitransport.ui.map.MapViewModel
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
