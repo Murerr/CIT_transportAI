@@ -54,6 +54,9 @@ dependencies {
     implementation "com.google.firebase:firebase-database:16.0.3"
     implementation "com.google.firebase:firebase-storage:16.0.3"
     implementation 'com.facebook.android:facebook-android-sdk:4.37.0'
+    //Google maps
+    implementation "com.google.android.gms:play-services-maps:16.0.0"
+    implementation "com.google.android.gms:play-services-location:16.0.0"
 
     //TEST Default
     testImplementation 'junit:junit:4.12'
