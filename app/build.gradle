@@ -10,6 +10,7 @@ android {
     defaultConfig {
         applicationId "cit.a19.project.group.aitransport"
         minSdkVersion 21
+        //noinspection OldTargetApi
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -54,12 +55,10 @@ dependencies {
     implementation "com.google.firebase:firebase-storage:16.0.3"
     implementation 'com.facebook.android:facebook-android-sdk:4.37.0'
 
-
-
-
     //TEST Default
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
 }
 apply plugin: 'com.google.gms.google-services'
