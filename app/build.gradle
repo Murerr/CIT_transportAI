@@ -10,6 +10,7 @@ android {
     defaultConfig {
         applicationId "cit.a19.project.group.aitransport"
         minSdkVersion 21
+        //noinspection OldTargetApi
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -28,25 +29,39 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation "com.android.support:appcompat-v7:27.1.1"
+    implementation "com.android.support:palette-v7:27.1.1"
+    implementation "com.android.support:recyclerview-v7:27.1.1"
+    implementation "com.android.support:support-v4:27.1.1"
 
     // <-Adding API DOWN BELOW->git
     // <Anko>
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
     implementation "org.jetbrains.anko:anko-design:$anko_version" // For SnackBars
     // <Glide>
-    implementation 'com.github.bumptech.glide:glide:4.7.1'
-    implementation 'com.google.android.gms:play-services-maps:15.0.1'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation 'com.google.android.gms:play-services-maps:16.0.0'
     implementation 'android.arch.lifecycle:extensions:1.1.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
     // <HITGIF> ( TextBox )
     implementation 'com.github.HITGIF:TextFieldBoxes:1.4.4'
     //Firebase
-    implementation 'com.google.firebase:firebase-core:16.0.3'
-    //implementation 'com.google.firebase:firebase-auth:16.0.3:15.0.0'
+    implementation "com.google.android.gms:play-services-auth:16.0.1"
+    implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation "com.google.firebase:firebase-auth:16.0.4"
+    implementation 'com.firebaseui:firebase-ui-auth:4.2.0'
+    implementation "com.google.firebase:firebase-firestore:17.1.0"
+    implementation "com.google.firebase:firebase-database:16.0.3"
+    implementation "com.google.firebase:firebase-storage:16.0.3"
+    implementation 'com.facebook.android:facebook-android-sdk:4.37.0'
+    //Google maps
+    implementation "com.google.android.gms:play-services-maps:16.0.0"
+    implementation "com.google.android.gms:play-services-location:16.0.0"
 
     //TEST Default
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
 }
 apply plugin: 'com.google.gms.google-services'
