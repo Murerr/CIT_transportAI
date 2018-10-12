@@ -31,6 +31,10 @@ MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListe
         const val RC_SIGN_IN = 123
         const val CHANNEL_ID = 456
         private lateinit var mAuth: FirebaseAuth
+        val providers = listOf(
+                AuthUI.IdpConfig.GoogleBuilder().build(),
+                AuthUI.IdpConfig.FacebookBuilder().build(),
+                AuthUI.IdpConfig.EmailBuilder().build())
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -107,11 +111,7 @@ MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListe
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_login -> {
-                val providers = listOf(
-                        AuthUI.IdpConfig.GoogleBuilder().build(),
-                        AuthUI.IdpConfig.FacebookBuilder().build(),
-                        AuthUI.IdpConfig.EmailBuilder().build())
-                createSignInIntent(providers)
+                createSignInIntent()
                 R.id.nav_login
             }
             R.id.nav_logout -> {
@@ -152,7 +152,7 @@ MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListe
         return false
     }
 
-    private fun createSignInIntent(providers: List<AuthUI.IdpConfig>) {
+    private fun createSignInIntent() {
         startActivityForResult(
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
@@ -165,11 +165,6 @@ MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListe
     }
 
     private fun silentSignIn() {
-        val providers = listOf(
-                AuthUI.IdpConfig.GoogleBuilder().build(),
-                AuthUI.IdpConfig.FacebookBuilder().build(),
-                AuthUI.IdpConfig.EmailBuilder().build())
-
         AuthUI.getInstance().silentSignIn(this, providers)
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
@@ -177,7 +172,7 @@ MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListe
                         val user = FirebaseAuth.getInstance().currentUser
                         updateUI(user)
                     } else {
-                        createSignInIntent(providers)
+                        createSignInIntent()
                         toast("Silent sign-in failed")
                     }
 
@@ -219,7 +214,7 @@ MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListe
 
                 if (response.error?.errorCode == ErrorCodes.NO_NETWORK) {
                     toast(R.string.error_no_network)
-                    return
+
                 }
                 toast(R.string.unknown_error)
                 Log.e("Error Sign in", "Sign-in error: ", response.error)
