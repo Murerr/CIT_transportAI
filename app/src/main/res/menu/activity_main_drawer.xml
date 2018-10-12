@@ -10,38 +10,27 @@
             android:icon="@drawable/ic_round_account_circle_24px"
             android:title="@string/action_sign_in_short" />
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_round_map_24px"
+            android:title="@string/nav_map" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_booking"
+            android:icon="@drawable/ic_directions_car_black_24px"
+            android:title="@string/nav_booking" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_payment"
+            android:icon="@drawable/ic_round_payment_24px"
+            android:title="@string/nav_payment" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
-    </group>
+            android:id="@+id/nav_edit"
+            android:icon="@drawable/ic_round_edit_24px"
+            android:title="@string/nav_edit" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_round_exit_to_app_24px"
+            android:title="@string/action_sign_out_int_short" />
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-            <item
-                android:id="@+id/nav_logout"
-                android:icon="@drawable/ic_round_exit_to_app_24px"
-                android:title="@string/action_sign_out_int_short" />
-        </menu>
-    </item>
+
+    </group>
 
 </menu>

@@ -1,7 +1,27 @@
-package cit.a19.project.group.aitransport
+package cit.a19.project.group.aitransport.ui.booking
 
-import android.arch.lifecycle.ViewModel;
+import android.content.Context
+import cit.a19.project.group.aitransport.PermissionManager
+import cit.a19.project.group.aitransport.PermissionManagerImpl
 
-class BookingViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+interface BookingFragmentModel {
+
+    companion object {
+        fun newInstance(activityContext: Context):
+                BookingFragmentModelImpl = BookingFragmentModelImpl(
+                // add param here
+                activityContext,
+                PermissionManagerImpl(activityContext)
+        )
+    }
+    // add functions here
+}
+// add data class here
+
+class BookingFragmentModelImpl(
+        // add Managers here
+        private val activityContext: Context,
+        private val permissionManager: PermissionManager
+) : BookingFragmentModel {
+
 }

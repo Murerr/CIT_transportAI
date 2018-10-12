@@ -10,7 +10,10 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import cit.a19.project.group.aitransport.ui.booking.BookingFragment
+import cit.a19.project.group.aitransport.ui.edit.EditFragment
 import cit.a19.project.group.aitransport.ui.map.MapFragment
+import cit.a19.project.group.aitransport.ui.payment.PaymentFragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.firebase.ui.auth.AuthUI
@@ -56,10 +59,7 @@ MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListe
         if (savedInstanceState == null) {
             loadFragment(MapFragment.newInstance(), "map") // OnCreate get last Fragment selected
         }
-
     }
-
-
 
     private fun updateUI(currentUser: FirebaseUser?) {
         if (currentUser != null) {
@@ -112,31 +112,23 @@ MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListe
         when (item.itemId) {
             R.id.nav_login -> {
                 createSignInIntent()
-                R.id.nav_login
+            }
+            R.id.nav_map -> {
+                loadFragment(MapFragment.newInstance(), "map") // OnCreate get last Fragment selected
+            }
+            R.id.nav_booking -> {
+                loadFragment(BookingFragment.newInstance(), "booking") // OnCreate get last Fragment selected
+            }
+            R.id.nav_payment -> {
+                loadFragment(PaymentFragment.newInstance(), "payment") // OnCreate get last Fragment selected
+            }
+            R.id.nav_edit ->{
+                loadFragment(EditFragment.newInstance(), "edit") // OnCreate get last Fragment selected
             }
             R.id.nav_logout -> {
                 signOut()
             }
-            R.id.nav_camera -> {
-                // Handle the camera action
-            }
-            R.id.nav_gallery -> {
-
-            }
-            R.id.nav_slideshow -> {
-
-            }
-            R.id.nav_manage -> {
-
-            }
-            R.id.nav_share -> {
-
-            }
-            R.id.nav_send -> {
-
-            }
         }
-
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
@@ -159,6 +151,7 @@ MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListe
                         .setLogo(R.drawable.common_google_signin_btn_icon_light)
                         .setIsSmartLockEnabled(!BuildConfig.DEBUG /* credentials */, true /* hints */)
                         .setAvailableProviders(providers)
+                        .setTheme(R.style.AppTheme)
                         .build(),
                 RC_SIGN_IN)
         // [END auth_fui_theme_logo]

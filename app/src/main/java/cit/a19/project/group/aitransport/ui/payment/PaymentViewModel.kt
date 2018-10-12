@@ -1,14 +1,14 @@
-package cit.a19.project.group.aitransport.ui.booking
+package cit.a19.project.group.aitransport.ui.payment
 
 import android.content.Context
 import cit.a19.project.group.aitransport.PermissionManager
 import cit.a19.project.group.aitransport.PermissionManagerImpl
 
-interface BookingFragmentModel {
+interface PaymentFragmentModel {
 
     companion object {
         fun newInstance(activityContext: Context):
-                BookingFragmentModelImpl = BookingFragmentModelImpl(
+                PaymentFragmentModelImpl = PaymentFragmentModelImpl(
                 // add param here
                 activityContext,
                 PermissionManagerImpl(activityContext)
@@ -18,10 +18,10 @@ interface BookingFragmentModel {
 }
 // add data class here
 
-class BookingFragmentModelImpl(
+class PaymentFragmentModelImpl(
         // add Managers here
         private val activityContext: Context,
         private val permissionManager: PermissionManager
-) : BookingFragmentModel {
+) : PaymentFragmentModel {
 
 }

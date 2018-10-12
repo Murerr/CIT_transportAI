@@ -33,5 +33,9 @@
     <string name="display_profile_email">Your @email</string>
     <string name="notification_title">Transport AI</string>
     <string name="notification_text">A notification text !</string>
+    <string name="nav_map">Map</string>
+    <string name="nav_booking">Booking</string>
+    <string name="nav_payment">Payment</string>
+    <string name="nav_edit">Edit Profile</string>
 
 </resources>
